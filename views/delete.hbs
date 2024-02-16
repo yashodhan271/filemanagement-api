@@ -1,0 +1,14 @@
+
+<tbody>
+    {{#each files}}
+        <tr>
+            <td>{{this}}</td>
+            <td>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="fileName" value="{{this}}">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+</tbody>

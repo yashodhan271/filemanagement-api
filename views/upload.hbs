@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>File Upload</h1>
+    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt, .pdf, .docx">
+        <button type="button" onclick="validateAndSubmit()">Upload</button>
+    </form>
+
+    <script>
+        function validateAndSubmit() {
+            const fileInput = document.querySelector('input[type="file"]');
+            const file = fileInput.files[0];
+
+            if (!file || file.size === 0) {
+                alert('Please select a non-empty file to upload.');
+            } else {
+               
+                document.getElementById('uploadForm').submit();
+            }
+        }
+    </script
